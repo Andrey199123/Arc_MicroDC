@@ -43,10 +43,6 @@ Two things I learned that might help anyone using the same models:
 
 React 19, TypeScript, Vite, Tailwind CSS, shadcn/ui, Framer Motion, React Router 7, and [Convex](https://convex.dev).
 
-## Security note
-
-The `/admin` and usage dashboards are gated by a passphrase read from `VITE_ADMIN_PASSWORD`. That check runs in the browser, so it's a convenience gate and not real security, since anything shipped to the client can be read by the user. Real authorization has to happen on the server.
-
 ## License
 
 [MIT](./LICENSE) © 2026 Andrey Vasilyev
