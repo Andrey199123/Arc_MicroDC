@@ -58,14 +58,9 @@ Milestones, weekly tasks, and a scheduled plan
 
 The public integration surface is visible in [AIService.ts](src/services/AIService.ts). It shows how the interface calls the backend, not the private inference configuration or prompts.
 
-### Lessons from the integration
-
-1. **Reasoning settings affect structured output.** In the team's tested configuration, `gpt-oss` rejected `max_tokens` values below 4096 unless `thinking: false` was supplied. Disabling thinking was useful for the team's structured-output requests. This is an observation about that configuration, not a guarantee across providers or model versions.
-2. **Cold starts need a different latency budget.** The team observed cold requests taking approximately 60–90 seconds, compared with a few seconds for warm requests, and used a 120-second request timeout. These are integration observations, not a published benchmark or latency guarantee.
-
 ## Engineering behind the experience
 
-The frontend separates presentation, service calls, and shared interaction logic so the planning experience can evolve without coupling every screen directly to backend details.
+The frontend separates presentation, service calls, and shared interaction logic so the planning experience can evolve without coupling every screen directly to backend details. This repository is a public engineering showcase, not a standalone self-hostable release.
 
 - **Typed service boundaries** for goals, milestones, tasks, scheduling, calendars, and AI actions in [`src/services/`](src/services/).
 - **Dedicated timeline components** for day-to-year planning views in [`src/components/timeline/`](src/components/timeline/).
@@ -87,7 +82,7 @@ convex/            Generated client bindings and shared category policy
 public/            Product screenshots and static assets
 ```
 
-The `convex/` directory is not the full backend. Generated bindings reference private modules that are deliberately absent here. Creating a blank Convex deployment or supplying an environment URL alone will not reproduce the working app. Use the [live product](https://arcgoalgetter.com) to explore the complete experience.
+The `convex/` directory is not the full backend. Generated bindings reference private modules that are deliberately absent here. Supplying an environment URL alone will not reproduce the working app; use the [live product](https://arcgoalgetter.com) to explore the complete experience.
 
 ## Team and contribution
 
